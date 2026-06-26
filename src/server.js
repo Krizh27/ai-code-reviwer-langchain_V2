@@ -1,4 +1,5 @@
 import express from "express";
+import rateLimit from "express-rate-limit";
 
 
 import { reviewChain } from "./chains/reviewChain.js";
@@ -58,8 +59,18 @@ const PORT = 3000;
 
 // });
 
+const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 10, // Limit each IP to 10 requests per window
+    message: {
+        success: false,
+        error: "Too many review requests. Please wait a few minutes and try again."
+    },
+});
+
 app.post(
     "/review",
+    limiter,
     validateInput,
     checkJavaScript,
     checkPromptInjection,
