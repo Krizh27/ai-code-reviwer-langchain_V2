@@ -7,9 +7,11 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    background-color: rgb(31, 31, 30); /*gray background */
-    color: #24292f; /* Dark text */
-    line-height: 1.5;   
+    background-color: rgb(31, 31, 30);
+    /*gray background */
+    color: #24292f;
+    /* Dark text */
+    line-height: 1.5;
     padding: 40px 20px;
 }
 
@@ -48,7 +50,7 @@ h1 {
 }
 
 h2 {
-    font-size: 18px;
+    font-size: 24px;
     font-weight: 600;
     margin-top: 32px;
     margin-bottom: 16px;
@@ -68,7 +70,7 @@ textarea {
     min-height: 300px;
     padding: 16px;
     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.45;
     color: #24292f;
     background-color: #f6f8fa;
@@ -79,7 +81,7 @@ textarea {
 
 textarea:focus {
     outline: none;
-    border-color:#F4845F;
+    border-color: #F4845F;
     box-shadow: 0 0 0 3px #F4845F(9, 105, 218, 0.3);
     background-color: #ffffff;
 }
@@ -102,7 +104,8 @@ button {
 
 #reviewBtn {
     color: #ffffff;
-    background-color: #F4845F ; /* orange primary button */
+    background-color: #F4845F;
+    /* orange primary button */
     border-color: rgba(27, 31, 36, 0.15);
     margin-top: 16px;
     box-shadow: 0 1px 0 rgba(27, 31, 36, 0.1);
@@ -140,7 +143,8 @@ button {
 .problem {
     background-color: #ffffff;
     border: 1px solid #d0d7de;
-    border-left: 4px solid #F4845F; /* Red for problem/error indication */
+    border-left: 4px solid #F4845F;
+    /* Red for problem/error indication */
     padding: 16px;
     margin-bottom: 12px;
     border-radius: 6px;
@@ -149,14 +153,14 @@ button {
 .problem h3 {
     margin: 0 0 8px;
     color: #F4845F;
-    font-size: 15px;
+    font-size: 22px;
     font-weight: 600;
 }
 
 .problem p {
     margin: 0;
     color: #24292f;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 /* Code Block */
@@ -171,13 +175,14 @@ pre {
 
 code {
     font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
-    font-size: 14px;
+    font-size: 16px;
     color: #24292f;
     background-color: transparent;
 }
 
 /* Success and Error Global Alerts */
-.success, .error {
+.success,
+.error {
     padding: 16px;
     border-radius: 6px;
     margin-top: 16px;
@@ -189,17 +194,19 @@ code {
 .success {
     background-color: #dcffe4;
     border-color: rgba(45, 164, 78, 0.4);
-    color: #2da44e; /* Green only for success */
+    color: #2da44e;
+    /* Green only for success */
 }
 
 .error {
     background-color: #ffebe9;
     border-color: rgba(255, 129, 130, 0.4);
-    color: #F4845F; /* Red only for errors */
+    color: #F4845F;
+    /* Red only for errors */
 }
 
 /* Processing Time (muted, small) */
-#output p:last-child {
+#output > p:last-child {
     font-size: 12px;
     color: #57606a;
     margin-top: 8px;
