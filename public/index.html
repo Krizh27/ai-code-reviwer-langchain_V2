@@ -1,8 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Code Reviewer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
 
     <div class="container">
 
-        <h1>🤖 AI Code Reviewer</h1>
+        <div class="header-title">
+            <img src="logo.png" alt="Klaude Code Logo" class="logo" id="appLogo">
+            <h1>Klaude Code</h1>
+        </div>
 
         <p class="subtitle">
             Paste your JavaScript code and get an AI review.
@@ -17,15 +29,12 @@
             Review Code
         </button>
 
-        <div id="output">
-            
-
+        <div id="output"></div>
+        
+        <button id="copyBtn">Copy Fixed Code</button>
     </div>
-    <button id="copyBtn">
-Copy Fixed Code
-</button>
-        </div>
 
     <script src="script.js"></script>
 
 </body>
+</html>

@@ -1,12 +1,16 @@
 const codeInput = document.getElementById("codeInput");
 const reviewBtn = document.getElementById("reviewBtn");
 const output = document.getElementById("output");
+const copyBtn = document.getElementById("copyBtn");
+
 
 reviewBtn.addEventListener("click", async () => {
     reviewBtn.disabled = true;
     console.log("Button clicked!");
 
     output.textContent = "Reviewing...";
+    copyBtn.textContent = "Copy Fixed Code";
+    copyBtn.style.display = "none";
 
     const code = codeInput.value;
     console.log(code);
@@ -51,9 +55,11 @@ reviewBtn.addEventListener("click", async () => {
     html += `
         <h2>Fixed Code</h2>
         <pre><code>${data.review.fixedCode}</code></pre>
+        <p><span>Processing Time: </span>${data.processingTime} ms</p>
     `;
 
     output.innerHTML = html;
+    copyBtn.style.display = "inline-block";
 
 } catch (err) {
     console.error(err);
@@ -66,4 +72,20 @@ reviewBtn.addEventListener("click", async () => {
 } finally {
     reviewBtn.disabled = false;
 }
+});
+
+codeInput.addEventListener("input", () => {
+    copyBtn.textContent = "Copy Fixed Code";
+    copyBtn.style.display = "none";
+});
+
+copyBtn.addEventListener("click", () => {
+    const codeElement = output.querySelector("pre code");
+    if (codeElement) {
+        navigator.clipboard.writeText(codeElement.textContent).then(() => {
+            copyBtn.textContent = "Copied";
+        }).catch(err => {
+            console.error("Failed to copy code: ", err);
+        });
+    }
 });
