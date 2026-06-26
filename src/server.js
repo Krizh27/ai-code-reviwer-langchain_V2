@@ -79,11 +79,20 @@ app.post(
             });
 
         } catch (err) {
-            console.error(err);
+           console.error("Gemini Error:", err);
 
-            res.status(500).json({
-                success: false,
-                error: "Review failed"
+    const message =
+        err?.message?.toLowerCase().includes("quota")
+            ? "AI quota exceeded. Try again later."
+            : err?.message?.toLowerCase().includes("api key")
+            ? "Invalid API key configuration."
+            : err?.message?.toLowerCase().includes("rate")
+            ? "Too many requests. Please slow down or try again after some time."
+            : "AI service failed. Please try again after some time.";
+
+    return res.status(500).json({
+        success: false,
+        error: message
             });
         }
     }
