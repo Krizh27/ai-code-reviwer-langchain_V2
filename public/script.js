@@ -12,9 +12,6 @@ reviewBtn.addEventListener("click", async () => {
     console.log(code);
 
     try {
-    output.textContent = "Reviewing...";
-    reviewBtn.disabled = true;
-
     const response = await fetch("/review", {
         method: "POST",
         headers: {

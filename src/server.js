@@ -15,9 +15,11 @@ app.use(express.static("public"));
 
 const PORT = 3000;
 
-app.get("/", (req, res) => {
-    res.send("AI Code Reviewer API");
-});
+// app.get("/", (req, res) => {
+//     res.send("AI Code Reviewer API");
+// });
+
+// no need for get post as public static already uses index.html file directly
 
 // app.post("/review", async (req, res) => {
 
